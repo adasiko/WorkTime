@@ -233,7 +233,8 @@ public class NewJFrame extends javax.swing.JFrame {
             
             String command=
             "Get-WinEvent -FilterHashTable @{LogName='system';"+
-            "ProviderName='Microsoft-Windows-Kernel-General';id=12,13;"+
+            "ProviderName='Microsoft-Windows-Kernel-General';"+
+            //"id=12,13;"+
             "StartTime=[DateTime]::ParseExact('"+date_format.format(dt1.getTime())+"','"+MY_DATE_FORMAT+"',$null);"+
             "EndTime=[DateTime]::ParseExact('"+date_format.format(dt2.getTime())+"','"+MY_DATE_FORMAT+"',$null)} | "+
             "Select Id, @{label='TimeCreated';expression={$_.TimeCreated.ToString('"+MY_DATE_FORMAT+"')}} | "+
